@@ -1,13 +1,11 @@
 # vscode-vue
-syntax highlight for vuejs
+Syntax Highlight for Vue.js
 
 ## Install
 
-```
-ext install
+`ext install` in Visual Studio Code command line
 
-vue
-```
+Search for `vue` and click install
 
 ## Screenshots
 

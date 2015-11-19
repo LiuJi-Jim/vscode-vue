@@ -1,10 +1,15 @@
 {
 	"name": "vue",
-	"description": "syntax highlight for vuejs",
-	"version": "0.0.1",
+	"description": "Syntax Highlight for Vue.js",
+	"version": "0.0.3",
 	"author": "liuji-jim",
 	"publisher": "liuji-jim",
-	"icon": "./images/vuejs-logo.png",
+	"icon": "images/vuejs-logo.png",
+	"keywords": [
+		"vue",
+		"vuejs",
+		"vue.js"
+	],
 	"engines": {
 		"vscode": "^0.10.1"
 	},
