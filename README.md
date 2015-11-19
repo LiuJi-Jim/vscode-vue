@@ -11,4 +11,4 @@ vue
 
 ## Screenshots
 
-> TDB
+![vue-loader-example](./screenshots/vue-loader-example.png)
