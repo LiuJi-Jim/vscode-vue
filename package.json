@@ -1,0 +1,25 @@
+{
+	"name": "vue",
+	"description": "syntax highlight for vuejs",
+	"version": "0.0.1",
+	"publisher": "liuji-jim",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [{
+			"id": "vue",
+			"aliases": ["Vue.js", "vue"],
+			"extensions": [".vue"],
+			"configuration": "./vue.configuration.json"
+		}],
+		"grammars": [{
+			"language": "vue",
+			"scopeName": "text.html.vue",
+			"path": "./syntaxes/vue.tmLanguage"
+		}]
+	}
+}
