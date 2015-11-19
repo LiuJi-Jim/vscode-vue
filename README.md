@@ -11,4 +11,4 @@ vue
 
 ## Screenshots
 
-![vue-loader-example](./screenshots/vue-loader-example.png)
+![vue-loader-example](./images/screenshot.png)
