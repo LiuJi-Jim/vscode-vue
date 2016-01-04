@@ -1,7 +1,7 @@
 {
 	"name": "vue",
 	"description": "Syntax Highlight for Vue.js",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "liuji-jim",
 	"publisher": "liuji-jim",
 	"icon": "images/vuejs-logo.png",
