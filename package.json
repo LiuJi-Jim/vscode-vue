@@ -31,7 +31,11 @@
 			"language": "vue",
 			"scopeName": "text.html.vue",
 			"path": "./syntaxes/vue.tmLanguage"
-		}]
+		}],
+        "snippets": [{
+				"language": "vue",
+				"path": "./snippets/snippets.json"
+			}]
 	},
 	"license": "MIT"
 }
