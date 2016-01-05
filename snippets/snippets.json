@@ -1,91 +1,91 @@
 {
 	"add": {
 		"prefix": "add",
-		"body": "\n${1:vm}.\\$add(${2:key}, ${3:value})\n",
+		"body": "${1:vm}.$add(${2:key}, ${3:value})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"vue-cdn": {
 		"prefix": "vue-cdn",
-		"body": "\n\t\t<script src=\"http://cdnjs.cloudflare.com/ajax/libs/vue/0.12.14/vue.min.js\"></script>\n",
+		"body": "<script src=\"http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.13/vue.min.js\"></script>\n",
 		"description": "",
 		"scope": "text.html"
 	},
 	"delete": {
 		"prefix": "delete",
-		"body": "\n${1:vm}.\\$delete(${2:key})\n",
+		"body": "${1:vm}.$delete(${2:key})\n",
+		"description": "",
+		"scope": "source.js"
+	},
+	"eval": {
+		"prefix": "eval",
+		"body": "${1:vm}.$eval(${2:msg} | ${3:uppercase})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"set": {
 		"prefix": "set",
-		"body": "\n${1:vm}.\\$eval(${2:msg} | ${3:uppercase})\n",
+		"body": "${1:vm}.$set(${2:expression}, ${3:value})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"get": {
 		"prefix": "get",
-		"body": "\n${1:vm}.\\$get(${expression})\n",
+		"body": "${1:vm}.$get(${expression})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"ipo": {
 		"prefix": "ipo",
-		"body": "\n${1:vm}.\\$interpolate(${2:templateString})\n",
+		"body": "${1:vm}.$interpolate(${2:templateString})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"log": {
 		"prefix": "log",
-		"body": "\n${1:vm}.\\$log(${2:[keyPath-optional]})\n",
-		"description": "",
-		"scope": "source.js"
-	},
-	"set1": {
-		"prefix": "set",
-		"body": "\n${1:vm}.\\$set(${2:key}, ${3:value})\n",
+		"body": "${1:vm}.$log(${2:[keyPath-optional]})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"v": {
 		"prefix": "v",
-		"body": "\n: {\n\t${1://content}\n}\n",
+		"body": ": {\n\t${1://content\\}\n\\}\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"vue-config": {
 		"prefix": "vue-config",
-		"body": "\n{\n  debug: ${1:true},\n\n  strict: ${2:false},\n\n  prefix: ${3:'v-'},\n\n  delimiters: ${4:['{{', '}}']},\n\n  silent: ${5:false},\n\n  interpolate: ${6:true},\n\n  async: ${7:true},\n\n  proto: ${8:true}\n}\n",
+		"body": "{\n\tdebug: ${1:true},\n\tstrict: ${2:false},\n\tprefix: ${3:'v-'},\n\tdelimiters: ${4:['{{', '\\}\\}']},\n\tsilent: ${5:false},\n\tinterpolate: ${6:true},\n\tasync: ${7:true},\n\tproto: ${8:true}\n\\}\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"vue-dir": {
 		"prefix": "vue-dir",
-		"body": "\nVue.directive('${1:my-directive}', {\n  bind: function () {\n\n  },\n  update: function (newValue, oldValue) {\n\n  },\n  unbind: function () {\n\n  }\n})\n",
+		"body": "Vue.directive('${1:my-directive}',\n\tbind: function () {\n\t\t${2://content}\n\t\\},\n\tupdate: function (newValue, oldValue) {\n\t\t${3://content}\n\t\\},\n\tunbind: function () {\n\t\t${3://content}\n\t\\}\n\\})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"vue-extend": {
 		"prefix": "vue-extend",
-		"body": "\nvar ${1:Profile} = Vue.extend({\n  template: ${2:'<p>{{firstName}} {{lastName}} aka {{alias}}</p>'}\n})\n\n",
+		"body": "var ${1:Profile} = Vue.extend\n\ttemplate: ${2:'<p>{{firstName\\}\\} {{lastName\\}\\} aka {{alias\\}\\}</p>'}\n\\})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"vue-filter": {
 		"prefix": "vue-filter",
-		"body": "\nVue.filter('${1:my-filter}', function (${2:value}) {\n  ${3://content}\n})\n",
+		"body": "Vue.filter('${1:my-filter}', function (${2:value}) {\n\t${3://content}\n\\})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"vue": {
 		"prefix": "vue",
-		"body": "\nvar ${1:vm} = new Vue({\n\tel: \"#${2:replace}\"\n\n\t${3}\n})\n",
+		"body": "var ${1:vm} = new Vue({\n\tel: \"#${2:replace}\"\n\\})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"wat": {
 		"prefix": "wat",
-		"body": "\n${1:vm}.\\$watch('${2:someObject}', ${3:callback}, {\n  ${4://content}\n})\n",
+		"body": "${1:vm}.$watch('${2:someObject}', function (${3:newVal}, ${4:oldVal}) {\n\t${5://content}\n\\})\n",
 		"description": "",
 		"scope": "source.js"
 	}
