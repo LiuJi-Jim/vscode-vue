@@ -211,6 +211,60 @@
 		</dict>
 		<dict>
 			<key>begin</key>
+			<string>(?:^\s+)?(&lt;)((?i:template))\b(?=[^&gt;]*lang="slm(?:\?[^"]*)?")</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.style.html</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(&lt;/)((?i:template))(&gt;)(?:\s*\n)?</string>
+			<key>name</key>
+			<string>text.slm.embedded.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=&lt;/(?i:template))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>text.slm</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
 			<string>(?:^\s+)?(&lt;)((?i:template))\b(?=[^&gt;]*lang="jade(?:\?[^"]*)?")</string>
 			<key>captures</key>
 			<dict>
@@ -366,6 +420,60 @@
 						<dict>
 							<key>include</key>
 							<string>source.stylus</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?:^\s+)?(&lt;)((?i:style))\b(?=[^&gt;]*lang="postcss(?:\?[^"]*)?")</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.style.html</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(&lt;/)((?i:style))(&gt;)(?:\s*\n)?</string>
+			<key>name</key>
+			<string>source.postcss.embedded.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=&lt;/(?i:style))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.postcss</string>
 						</dict>
 					</array>
 				</dict>
@@ -597,7 +705,69 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(&lt;)((?i:script))\b(?![^&gt;]*/&gt;)(?![^&gt;]*(?i:type.?=.?text/((?!javascript).*)))</string>
+			<string>(?:^\s+)?(&lt;)((?i:script))\b(?=[^&gt;]*lang="livescript(?:\?[^"]*)?")</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.script.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;=&lt;/(script|SCRIPT))(&gt;)(?:\s*\n)?</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.html</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>source.livescript.embedded.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?&lt;!&lt;/(?:script|SCRIPT))(&gt;)</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.script.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(&lt;/)((?i:script))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.livescript</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(&lt;)((?i:script))\b(?![^&gt;]*/&gt;)(?![^&gt;]*(?i:type.?=.?text/((?!javascript|babel).*)))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -1204,7 +1374,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.begin.html</string>
+							<string>punctuation.definition.generic.begin.html</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1214,7 +1384,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.end.html</string>
+							<string>punctuation.definition.generic.end.html</string>
 						</dict>
 					</dict>
 					<key>name</key>
