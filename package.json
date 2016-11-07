@@ -30,7 +30,7 @@
 		"grammars": [{
 			"language": "vue",
 			"scopeName": "text.html.vue",
-			"path": "./syntaxes/vue.tmLanguage"
+			"path": "./syntaxes/vue.tmLanguage.json"
 		}],
 		"snippets": [{
 			"language": "vue",
