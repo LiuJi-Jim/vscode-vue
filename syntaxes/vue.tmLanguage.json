@@ -298,7 +298,7 @@
       ]
     },
     {
-      "begin": "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=\"(?:s(a|c)ss)(?:\\?[^\"]*)?\")",
+      "begin": "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=\"(?:scss)(?:\\?[^\"]*)?\")",
       "captures": {
         "1": {
           "name": "punctuation.definition.tag.begin.html"
@@ -327,6 +327,41 @@
           "patterns": [
             {
               "include": "source.css.scss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?:^\\s+)?(<)((?i:style))\\b(?=[^>]*lang=\"(?:sass)(?:\\?[^\"]*)?\")",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.tag.begin.html"
+        },
+        "2": {
+          "name": "entity.name.tag.style.html"
+        },
+        "3": {
+          "name": "punctuation.definition.tag.html"
+        }
+      },
+      "end": "(<\/)((?i:style))(>)(?:\\s*\\n)?",
+      "name": "source.sass.embedded.html",
+      "patterns": [
+        {
+          "include": "#tag-stuff"
+        },
+        {
+          "begin": "(>)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.tag.end.html"
+            }
+          },
+          "end": "(?=<\/(?i:style))",
+          "patterns": [
+            {
+              "include": "source.sass"
             }
           ]
         }
