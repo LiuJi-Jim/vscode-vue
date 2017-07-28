@@ -1,7 +1,7 @@
 {
 	"add": {
 		"prefix": "add",
-		"body": "${1:vm}.$add(${2:key}, ${3:value})\n",
+		"body": "${1:vm}.\\$add(${2:key}, ${3:value})\n",
 		"description": "",
 		"scope": "source.js"
 	},
@@ -13,37 +13,37 @@
 	},
 	"delete": {
 		"prefix": "delete",
-		"body": "${1:vm}.$delete(${2:key})\n",
+		"body": "${1:vm}.\\$delete(${2:key})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"eval": {
 		"prefix": "eval",
-		"body": "${1:vm}.$eval(${2:msg} | ${3:uppercase})\n",
+		"body": "${1:vm}.\\$eval(${2:msg} | ${3:uppercase})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"set": {
 		"prefix": "set",
-		"body": "${1:vm}.$set(${2:expression}, ${3:value})\n",
+		"body": "${1:vm}.\\$set(${2:expression}, ${3:value})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"get": {
 		"prefix": "get",
-		"body": "${1:vm}.$get(${expression})\n",
+		"body": "${1:vm}.\\$get(${expression})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"ipo": {
 		"prefix": "ipo",
-		"body": "${1:vm}.$interpolate(${2:templateString})\n",
+		"body": "${1:vm}.\\$interpolate(${2:templateString})\n",
 		"description": "",
 		"scope": "source.js"
 	},
 	"log": {
 		"prefix": "log",
-		"body": "${1:vm}.$log(${2:[keyPath-optional]})\n",
+		"body": "${1:vm}.\\$log(${2:[keyPath-optional]})\n",
 		"description": "",
 		"scope": "source.js"
 	},
@@ -85,7 +85,7 @@
 	},
 	"wat": {
 		"prefix": "wat",
-		"body": "${1:vm}.$watch('${2:someObject}', function (${3:newVal}, ${4:oldVal}) {\n\t${5://content}\n\\})\n",
+		"body": "${1:vm}.\\$watch('${2:someObject}', function (${3:newVal}, ${4:oldVal}) {\n\t${5://content}\n\\})\n",
 		"description": "",
 		"scope": "source.js"
 	}
