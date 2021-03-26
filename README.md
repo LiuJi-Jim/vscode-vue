@@ -29,7 +29,7 @@ Search for `vue` and click install
 
 |trigger|snippet|
 |-------|-------|
-|`vud-cdn`|`<script>` tag to cdnjs|
+|`vue-cdn`|`<script>` tag to cdnjs|
 |`add`|`vm.$add`|
 |`delete`|`vm.$delete`|
 |`eval`|`vm.$eval`|
